@@ -1,11 +1,6 @@
 import networkx as nx
 from matplotlib import pyplot as plt
-
-
-def read_data(connections_string):
-    connections_string = connections_string.replace('\n', '')
-    connections = connections_string.split(' ')
-    return int(connections[0]), int(connections[1])
+from CommonFunctions import read_tuple_data
 
 
 if __name__ == '__main__':
@@ -14,7 +9,7 @@ if __name__ == '__main__':
     with open(path, 'r') as file:
         nodes = file.readlines()
 
-    nodes = list(map(read_data, nodes))
+    nodes = list(map(read_tuple_data, nodes))
 
     road_graph = nx.Graph()
     road_graph.add_edges_from(nodes)

@@ -18,10 +18,10 @@ if __name__ == '__main__':
                  'fspace': f_space.tolist(),
                  'degrees': {}}
 
+    calculator = AverageDegreeCalculator(N=N)
+
     results_path = 'results'
     make_directories([results_path])
-
-    calculator = AverageDegreeCalculator(N=N)
 
     t_total = 0
     for degree in degrees:

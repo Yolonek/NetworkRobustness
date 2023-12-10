@@ -7,8 +7,8 @@ from CommonFunctions import save_json_file, make_directories
 if __name__ == '__main__':
     samples = 500
     N = 500
-    degrees = [2, 4]
-    graph_type = 'BA'
+    degrees = [0.5, 1, 2, 4]
+    graph_type = 'ERG'
 
     f_space = np.linspace(0, 1, 101)
 
@@ -18,10 +18,10 @@ if __name__ == '__main__':
                  'fspace': f_space.tolist(),
                  'degrees': {}}
 
+    calculator = AverageDegreeCalculator(N=N)
+
     results_path = 'results'
     make_directories([results_path])
-
-    calculator = AverageDegreeCalculator(N=N)
 
     t_total = 0
     for degree in degrees:

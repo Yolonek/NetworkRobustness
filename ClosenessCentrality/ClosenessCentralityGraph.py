@@ -16,13 +16,13 @@ if __name__ == '__main__':
     degree_str = ''
     for deg in degrees:
         degree_str += f'k{deg}'
-    file_title = f'BetweennessCentrality{graph_type}N{N}L{samples}deg{degree_str}.json'
+    file_title = f'ClosenessCentrality{graph_type}N{N}L{samples}deg{degree_str}.json'
 
     ba_dict = read_json_file(file_title, sub_dir=results_path)
     print(ba_dict)
 
     graph_type = 'WS'
-    file_title = f'BetweennessCentrality{graph_type}N{N}L{samples}deg{degree_str}.json'
+    file_title = f'ClosenessCentrality{graph_type}N{N}L{samples}deg{degree_str}.json'
 
     ws_dict = read_json_file(file_title, sub_dir=results_path)
     print(ws_dict)
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     degree_str = ''
     for deg in degrees:
         degree_str += f'k{deg}'
-    file_title = f'BetweennessCentrality{graph_type}N{N}L{samples}deg{degree_str}.json'
+    file_title = f'ClosenessCentrality{graph_type}N{N}L{samples}deg{degree_str}.json'
 
     erg_dict = read_json_file(file_title, sub_dir=results_path)
     print(erg_dict)
@@ -68,11 +68,11 @@ if __name__ == '__main__':
         axes[index].set_title(title)
 
     fig_title = f'Giant component size in function of fraction $f$ of graph removed.\n' \
-                f'Betweenness Centrality\n' \
+                f'Closeness Centrality\n' \
                 f'Average: {samples} samples, Nodes: {N}'
     figure.suptitle(fig_title)
 
-    file_name = f'BetweennessCentralityN{N}L{samples}.png'
+    file_name = f'ClosenessCentralityN{N}L{samples}.png'
     image_name = os.path.join(image_path, file_name)
     if not check_if_file_exists(image_name):
         figure.savefig(image_name)
